@@ -34,7 +34,7 @@ class SplayTree {
     ~SplayTree();
 
     void insert(const string& word, float aggressionFactor);
-    bool search(const string& word, float& aggressionFactor);
+    float search(const string& word);
     void clear();
 };
 

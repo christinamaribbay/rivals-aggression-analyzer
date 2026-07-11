@@ -92,15 +92,14 @@ void SplayTree::insert(const string& word, float aggressionFactor) {
     root = insertHelper(root, word, aggressionFactor);
 }
 
-bool SplayTree::search(const string& word, float& aggressionFactor) {
+float SplayTree::search(const string& word) {
     if (root == nullptr)
-        return false;
+        return -1.0f;
     root = splay(root, word);
     if (root->word == word) {
-        aggressionFactor = root->aggressionFactor;
-        return true;
+        return root->aggressionFactor;
     }
-    return false;
+    return -1.0f;
 }
 
 void SplayTree::clearHelper(SplayNode* node) {
